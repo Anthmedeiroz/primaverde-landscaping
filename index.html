@@ -105,7 +105,14 @@
   .testi-arrow:active { transform: translateY(0); }
   .testi-arrow svg { height: 1.25rem; width: 1.25rem; }
   .testi-word { display: inline-block; }
-  @media (max-width: 767px) { .testi-stage { height: 18rem; } .testi-arrows { padding-top: 1.5rem; } }
+  @media (max-width: 767px) {
+    .testi-stage { height: 15rem; }
+    .testi-content { min-height: auto; justify-content: flex-start; }
+    .testi-arrows { padding-top: 1.25rem; }
+    .testi-avatar { height: 3.75rem; width: 3.75rem; font-size: 1.25rem; }
+    .testi-cardname { font-size: 1rem; }
+    .testi-quote { min-height: auto; font-size: 1.02rem; }
+  }
 
   /* ===== Spotlight glow cards (vanilla port of spotlight-card) ===== */
   /* hue follows pointer X across the screen; green-biased for brand */
@@ -575,9 +582,9 @@
           <span class="h-12 w-12 rounded-2xl bg-cream/10 grid place-items-center text-leaf group-hover:bg-leaf group-hover:text-pine transition-colors"><svg class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M2.5 6.5c0 8.3 6.7 15 15 15a2 2 0 0 0 2-2v-2.2a1.5 1.5 0 0 0-1.2-1.5l-3-.6a1.5 1.5 0 0 0-1.5.6l-.8 1a12 12 0 0 1-5.3-5.3l1-.8a1.5 1.5 0 0 0 .6-1.5l-.6-3A1.5 1.5 0 0 0 6.7 4.5H4.5a2 2 0 0 0-2 2Z"/></svg></span>
           <span><span class="block text-cream/60 text-xs uppercase tracking-wider">Call us</span><span class="block text-cream font-600 text-lg">(647) 613-6748</span></span>
         </a>
-        <a href="mailto:primaverdelandscapinginc@gmail.com" class="flex items-center gap-4 group">
-          <span class="h-12 w-12 rounded-2xl bg-cream/10 grid place-items-center text-leaf group-hover:bg-leaf group-hover:text-pine transition-colors"><svg class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M3 7l9 6 9-6M4 5h16a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V6a1 1 0 0 1 1-1Z"/></svg></span>
-          <span><span class="block text-cream/60 text-xs uppercase tracking-wider">Email us</span><span class="block text-cream font-600 text-lg">primaverdelandscapinginc@gmail.com</span></span>
+        <a href="mailto:primaverdelandscapinginc@gmail.com" class="flex items-center gap-4 group min-w-0">
+          <span class="h-12 w-12 shrink-0 rounded-2xl bg-cream/10 grid place-items-center text-leaf group-hover:bg-leaf group-hover:text-pine transition-colors"><svg class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M3 7l9 6 9-6M4 5h16a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V6a1 1 0 0 1 1-1Z"/></svg></span>
+          <span class="min-w-0"><span class="block text-cream/60 text-xs uppercase tracking-wider">Email us</span><span class="block text-cream font-600 text-base sm:text-lg break-all leading-snug">primaverdelandscapinginc@gmail.com</span></span>
         </a>
         <div class="flex items-center gap-4">
           <span class="h-12 w-12 rounded-2xl bg-cream/10 grid place-items-center text-leaf"><svg class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M12 22s7-6.5 7-12a7 7 0 1 0-14 0c0 5.5 7 12 7 12Z"/><circle cx="12" cy="10" r="2.5"/></svg></span>
@@ -661,7 +668,7 @@
         <h4 class="font-display text-cream font-700 mb-4">Get in touch</h4>
         <ul class="space-y-2 text-sm">
           <li><a href="tel:+16476136748" class="hover:text-leaf transition-colors">(647) 613-6748</a></li>
-          <li><a href="mailto:primaverdelandscapinginc@gmail.com" class="hover:text-leaf transition-colors">primaverdelandscapinginc@gmail.com</a></li>
+          <li><a href="mailto:primaverdelandscapinginc@gmail.com" class="hover:text-leaf transition-colors break-all">primaverdelandscapinginc@gmail.com</a></li>
           <li>Mon–Sat · 7am–6pm</li>
         </ul>
         <div class="flex gap-3 mt-5">
