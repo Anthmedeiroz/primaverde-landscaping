@@ -106,9 +106,12 @@
   .testi-arrow svg { height: 1.25rem; width: 1.25rem; }
   .testi-word { display: inline-block; }
   @media (max-width: 767px) {
+    .testi-grid { gap: 1.1rem; }
     .testi-stage { height: 15rem; }
     .testi-content { min-height: auto; justify-content: flex-start; }
-    .testi-arrows { padding-top: 1.25rem; }
+    /* Pull the slider arrows up to sit directly beneath the card deck,
+       above the quote/attribution. */
+    .testi-arrows { order: -1; padding-top: 0; margin-bottom: 1.75rem; justify-content: center; }
     .testi-avatar { height: 3.75rem; width: 3.75rem; font-size: 1.25rem; }
     .testi-cardname { font-size: 1rem; }
     .testi-quote { min-height: auto; font-size: 1.02rem; }
