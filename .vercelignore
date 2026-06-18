@@ -1,4 +1,4 @@
-# Keep the Vercel deployment a pure static site: index.html + the two logos.
+# Keep the Vercel deployment a pure static site: index.html, the logos, og-image.
 node_modules
 .npmcache
 .tmp
@@ -11,7 +11,7 @@ package-lock.json
 serve.mjs
 screenshot.mjs
 
-# Source / reference material
+# Source / reference material (kept in the repo, not shipped to the live site)
 Web.md
-breedlove.xyz_.png
-Brand Guidelines.png
+README.md
+brand_assets

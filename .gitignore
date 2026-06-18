@@ -5,7 +5,3 @@ node_modules/
 .tmp/
 temporary screenshots/
 *.log
-
-# Large reference / source assets not needed by the live site
-breedlove.xyz_.png
-Brand Guidelines.png
