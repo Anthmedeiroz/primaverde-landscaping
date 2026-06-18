@@ -1,0 +1,17 @@
+# Keep the Vercel deployment a pure static site: index.html + the two logos.
+node_modules
+.npmcache
+.tmp
+temporary screenshots
+*.log
+
+# Dev tooling — not needed in production
+package.json
+package-lock.json
+serve.mjs
+screenshot.mjs
+
+# Source / reference material
+Web.md
+breedlove.xyz_.png
+Brand Guidelines.png
