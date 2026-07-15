@@ -271,6 +271,18 @@
     .gal-track { animation: none; }
   }
 
+  /* ===== Before / After slider ===== */
+  .ba { position: relative; width: 100%; aspect-ratio: 4 / 3; border-radius: 1rem; overflow: hidden; user-select: none; touch-action: pan-y; --pos: 50%; }
+  .ba img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; display: block; pointer-events: none; }
+  .ba .ba-after { clip-path: inset(0 0 0 var(--pos)); }
+  .ba .ba-tag { position: absolute; bottom: .75rem; z-index: 3; padding: .25rem .7rem; border-radius: 999px; font-size: .7rem; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; color: #fff; background: rgba(12,12,10,.6); -webkit-backdrop-filter: blur(4px); backdrop-filter: blur(4px); }
+  .ba .ba-tag.before { left: .75rem; }
+  .ba .ba-tag.after  { right: .75rem; }
+  .ba .ba-line { position: absolute; top: 0; bottom: 0; left: var(--pos); z-index: 4; width: 3px; margin-left: -1.5px; background: rgba(255,255,255,.9); box-shadow: 0 0 0 1px rgba(12,12,10,.15); }
+  .ba .ba-knob { position: absolute; top: 50%; left: var(--pos); z-index: 5; width: 44px; height: 44px; margin: -22px 0 0 -22px; border-radius: 999px; background: rgba(255,255,255,.95); box-shadow: 0 4px 14px rgba(12,12,10,.3); display: grid; place-items: center; color: #2E5016; cursor: ew-resize; }
+  .ba .ba-knob svg { width: 22px; height: 22px; }
+  .ba-range { position: absolute; inset: 0; z-index: 6; width: 100%; height: 100%; margin: 0; opacity: 0; cursor: ew-resize; }
+
   /* ===== Back-to-top arrow ===== */
   .pv-top {
     position: fixed; right: 1.1rem; bottom: 1.1rem; z-index: 55;
@@ -641,6 +653,58 @@
     <a href="#quote" class="reveal btn-primary inline-flex items-center gap-2 rounded-full bg-forest px-8 py-4 text-base font-700 text-cream hover:bg-pine transition-colors">See what we can do for you
       <svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path stroke-linecap="round" stroke-linejoin="round" d="M5 12h14M13 6l6 6-6 6"/></svg>
     </a>
+  </div>
+</section>
+
+<!-- BEFORE / AFTER -->
+<section id="beforeafter" class="py-24 sm:py-32 bg-cream">
+  <div class="mx-auto max-w-7xl px-5 sm:px-8">
+    <div class="text-center max-w-2xl mx-auto mb-12">
+      <p class="reveal inline-flex items-center gap-3 text-grass font-700 text-sm tracking-[.24em] uppercase mb-4"><span class="h-px w-10 bg-grass"></span> The Transformation <span class="h-px w-10 bg-grass"></span></p>
+      <h2 class="reveal font-display text-4xl sm:text-5xl font-700 text-forest">Before &amp; After</h2>
+      <p class="reveal lead mt-4 text-pine/70 text-lg">Drag the slider to see how we transform real GTA yards.</p>
+    </div>
+
+    <div class="grid gap-8 md:grid-cols-3">
+      <figure class="reveal" data-d="1">
+        <div class="ba shadow-card">
+          <img class="ba-before" src="./projects/backyard-sod-before.jpg" alt="Backyard before — patchy dirt lawn" />
+          <img class="ba-after"  src="./projects/backyard-sod.jpg" alt="Backyard after — fresh sod and stone border" />
+          <span class="ba-tag before">Before</span>
+          <span class="ba-tag after">After</span>
+          <span class="ba-line"></span>
+          <span class="ba-knob"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l-6 6 6 6M15 6l6 6-6 6"/></svg></span>
+          <input class="ba-range" type="range" min="0" max="100" value="50" aria-label="Before and after slider" />
+        </div>
+        <figcaption class="mt-4 font-display text-lg font-700 text-forest">Backyard Sod &amp; Stone Border</figcaption>
+      </figure>
+
+      <figure class="reveal" data-d="2">
+        <div class="ba shadow-card">
+          <img class="ba-before" src="./projects/garden-bed-before.jpg" alt="Garden before — overgrown leaf-covered bed" />
+          <img class="ba-after"  src="./projects/garden-bed-mulch.jpg" alt="Garden after — fresh mulch beds and plantings" />
+          <span class="ba-tag before">Before</span>
+          <span class="ba-tag after">After</span>
+          <span class="ba-line"></span>
+          <span class="ba-knob"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l-6 6 6 6M15 6l6 6-6 6"/></svg></span>
+          <input class="ba-range" type="range" min="0" max="100" value="50" aria-label="Before and after slider" />
+        </div>
+        <figcaption class="mt-4 font-display text-lg font-700 text-forest">Garden Bed &amp; Mulch Refresh</figcaption>
+      </figure>
+
+      <figure class="reveal" data-d="3">
+        <div class="ba shadow-card">
+          <img class="ba-before" src="./projects/backyard-living-before.jpg" alt="Backyard before — bare, torn-up yard" />
+          <img class="ba-after"  src="./projects/backyard-living.jpg" alt="Backyard after — lush lawn, patio and planted beds" />
+          <span class="ba-tag before">Before</span>
+          <span class="ba-tag after">After</span>
+          <span class="ba-line"></span>
+          <span class="ba-knob"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l-6 6 6 6M15 6l6 6-6 6"/></svg></span>
+          <input class="ba-range" type="range" min="0" max="100" value="50" aria-label="Before and after slider" />
+        </div>
+        <figcaption class="mt-4 font-display text-lg font-700 text-forest">Backyard Living Space</figcaption>
+      </figure>
+    </div>
   </div>
 </section>
 
@@ -1022,6 +1086,17 @@
     } finally {
       btn.disabled = false; btn.style.opacity = ''; btn.style.pointerEvents = '';
     }
+  });
+</script>
+
+<script>
+  // Before/After sliders — range input drives the --pos CSS var on each .ba
+  document.querySelectorAll('.ba').forEach((ba) => {
+    const range = ba.querySelector('.ba-range');
+    if (!range) return;
+    const set = (v) => ba.style.setProperty('--pos', v + '%');
+    set(range.value);
+    range.addEventListener('input', () => set(range.value));
   });
 </script>
 
