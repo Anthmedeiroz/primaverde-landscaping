@@ -253,6 +253,8 @@
     display: flex; gap: 1rem; width: max-content;
     animation: gal-scroll 42s linear infinite;
   }
+  .gal-track + .gal-track { margin-top: 1rem; }
+  .gal-track.gal-reverse { animation-direction: reverse; animation-duration: 50s; }
   .gal-marquee:hover .gal-track { animation-play-state: paused; }
   .gal-slide {
     position: relative; flex: 0 0 auto;
@@ -555,19 +557,25 @@
 
   <!-- sliding gallery (breaks out of the container to run edge-to-edge) -->
   <div class="gal-marquee reveal">
+    <!-- row 1 (scrolls left) -->
     <div class="gal-track">
-      <!-- set A -->
       <a href="#quote" class="gal-slide group"><img src="https://images.unsplash.com/photo-1576013551627-0cc20b96c2a7?w=1000&q=80&auto=format&fit=crop" alt="Mediterranean garden with pool" /><div class="gal-cap"><p class="text-cream font-display text-lg font-700">Mediterranean Retreat</p></div></a>
       <a href="#quote" class="gal-slide group"><img src="https://images.unsplash.com/photo-1585320806297-9794b3e4eeae?w=1000&q=80&auto=format&fit=crop" alt="Garden walkway" /><div class="gal-cap"><p class="text-cream font-display text-lg font-700">Stone Walkway</p></div></a>
       <a href="#quote" class="gal-slide group"><img src="https://images.unsplash.com/photo-1558904541-efa843a96f01?w=1000&q=80&auto=format&fit=crop" alt="Manicured lawn" /><div class="gal-cap"><p class="text-cream font-display text-lg font-700">Estate Lawn</p></div></a>
-      <a href="#quote" class="gal-slide group"><img src="https://images.unsplash.com/photo-1591857177580-dc82b9ac4e1e?w=1000&q=80&auto=format&fit=crop" alt="Formal garden" /><div class="gal-cap"><p class="text-cream font-display text-lg font-700">Formal Garden</p></div></a>
-      <a href="#quote" class="gal-slide group"><img src="https://images.unsplash.com/photo-1542273917363-3b1817f69a2d?w=1000&q=80&auto=format&fit=crop" alt="Tree-lined landscape" /><div class="gal-cap"><p class="text-cream font-display text-lg font-700">Woodland Border</p></div></a>
-      <!-- set B (duplicate for seamless loop) -->
+      <!-- duplicate for seamless loop -->
       <a href="#quote" class="gal-slide group" aria-hidden="true" tabindex="-1"><img src="https://images.unsplash.com/photo-1576013551627-0cc20b96c2a7?w=1000&q=80&auto=format&fit=crop" alt="" /><div class="gal-cap"><p class="text-cream font-display text-lg font-700">Mediterranean Retreat</p></div></a>
       <a href="#quote" class="gal-slide group" aria-hidden="true" tabindex="-1"><img src="https://images.unsplash.com/photo-1585320806297-9794b3e4eeae?w=1000&q=80&auto=format&fit=crop" alt="" /><div class="gal-cap"><p class="text-cream font-display text-lg font-700">Stone Walkway</p></div></a>
       <a href="#quote" class="gal-slide group" aria-hidden="true" tabindex="-1"><img src="https://images.unsplash.com/photo-1558904541-efa843a96f01?w=1000&q=80&auto=format&fit=crop" alt="" /><div class="gal-cap"><p class="text-cream font-display text-lg font-700">Estate Lawn</p></div></a>
+    </div>
+    <!-- row 2 (scrolls right) -->
+    <div class="gal-track gal-reverse">
+      <a href="#quote" class="gal-slide group"><img src="https://images.unsplash.com/photo-1591857177580-dc82b9ac4e1e?w=1000&q=80&auto=format&fit=crop" alt="Formal garden" /><div class="gal-cap"><p class="text-cream font-display text-lg font-700">Formal Garden</p></div></a>
+      <a href="#quote" class="gal-slide group"><img src="https://images.unsplash.com/photo-1416879595882-3373a0480b5b?w=1000&q=80&auto=format&fit=crop" alt="Irrigation and lighting" /><div class="gal-cap"><p class="text-cream font-display text-lg font-700">Irrigation &amp; Lighting</p></div></a>
+      <a href="#quote" class="gal-slide group"><img src="https://images.unsplash.com/photo-1492496913980-501348b61469?w=1000&q=80&auto=format&fit=crop" alt="Seasonal garden cleanup" /><div class="gal-cap"><p class="text-cream font-display text-lg font-700">Seasonal Cleanup</p></div></a>
+      <!-- duplicate for seamless loop -->
       <a href="#quote" class="gal-slide group" aria-hidden="true" tabindex="-1"><img src="https://images.unsplash.com/photo-1591857177580-dc82b9ac4e1e?w=1000&q=80&auto=format&fit=crop" alt="" /><div class="gal-cap"><p class="text-cream font-display text-lg font-700">Formal Garden</p></div></a>
-      <a href="#quote" class="gal-slide group" aria-hidden="true" tabindex="-1"><img src="https://images.unsplash.com/photo-1542273917363-3b1817f69a2d?w=1000&q=80&auto=format&fit=crop" alt="" /><div class="gal-cap"><p class="text-cream font-display text-lg font-700">Woodland Border</p></div></a>
+      <a href="#quote" class="gal-slide group" aria-hidden="true" tabindex="-1"><img src="https://images.unsplash.com/photo-1416879595882-3373a0480b5b?w=1000&q=80&auto=format&fit=crop" alt="" /><div class="gal-cap"><p class="text-cream font-display text-lg font-700">Irrigation &amp; Lighting</p></div></a>
+      <a href="#quote" class="gal-slide group" aria-hidden="true" tabindex="-1"><img src="https://images.unsplash.com/photo-1492496913980-501348b61469?w=1000&q=80&auto=format&fit=crop" alt="" /><div class="gal-cap"><p class="text-cream font-display text-lg font-700">Seasonal Cleanup</p></div></a>
     </div>
   </div>
 
@@ -746,16 +754,14 @@
     const nextBtn = document.getElementById('testiNext');
 
     const data = [
-      { initials: 'MR', name: 'Maria R.', designation: 'Full backyard redesign', color: '#2E5016',
-        quote: 'Primaverde turned our tired backyard into a showpiece. The crew was professional, on time, and genuinely cared about the details. Worth every penny.' },
-      { initials: 'JD', name: 'James D.', designation: 'Monthly maintenance', color: '#5E8C2A',
-        quote: "We've used three landscapers over the years and none compare. Our lawn has never looked better, and their maintenance team is reliable to a fault." },
-      { initials: 'SL', name: 'Sofia L.', designation: 'Patio & lighting', color: '#4A7A24',
-        quote: "The new patio and lighting completely transformed how we use our yard. Beautiful craftsmanship and a quote that didn't budge an inch. Highly recommend." },
-      { initials: 'MT', name: 'Marcus T.', designation: 'Front yard & irrigation', color: '#1A3010',
-        quote: "They redid our front yard and added irrigation before the summer heat. Now it's the best-looking lawn on the street — neighbors keep asking who we hired." },
-      { initials: 'GH', name: 'Grace H.', designation: 'Garden design & planting', color: '#3A6A1E',
-        quote: "From the first sketch to the final planting, the team listened to exactly what I wanted. My garden finally feels like the little retreat I'd been dreaming of." },
+      { initials: 'YM', name: 'Verified Customer', designation: 'Yard maintenance · Corner lot', color: '#2E5016',
+        quote: 'Vito and his team did an outstanding job. We have a very large corner lot with mature pines and dense landscaping, and they handled it all flawlessly. Everything was carefully cleaned, trimmed, mulched, and re-soiled with great attention to detail. The property looks refreshed and beautifully maintained. His pricing was very reasonable and I would absolutely hire Vito again and highly recommend his team.' },
+      { initials: 'R', name: 'Rachel', designation: 'Mississauga · Lawn & yard maintenance', color: '#5E8C2A',
+        quote: 'His team cleaned and mowed the lawn and back yard for a really good price. The work was done professionally. I highly recommend 👌' },
+      { initials: 'FY', name: 'Verified Customer', designation: 'Hedge & shrub trimming · Front yard', color: '#4A7A24',
+        quote: 'Vito did a great job with my front yard. Dealing with him was pleasant and fast.' },
+      { initials: 'LM', name: 'Verified Customer', designation: 'Lawn mowing', color: '#1A3010',
+        quote: 'Quick response, job well done & very fair price. Highly recommend.' },
     ];
 
     let active = 0, timer = null;
