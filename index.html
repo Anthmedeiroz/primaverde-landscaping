@@ -240,6 +240,34 @@
   @media (prefers-reduced-motion: reduce) {
     .glow-card { transition: none; }
   }
+
+  /* ===== Sliding project gallery (auto-scrolling marquee) ===== */
+  .gal-marquee { position: relative; overflow: hidden; }
+  .gal-marquee::before,
+  .gal-marquee::after {
+    content: ""; position: absolute; top: 0; bottom: 0; width: 12%; z-index: 2; pointer-events: none;
+  }
+  .gal-marquee::before { left: 0;  background: linear-gradient(90deg, #fff, transparent); }
+  .gal-marquee::after  { right: 0; background: linear-gradient(270deg, #fff, transparent); }
+  .gal-track {
+    display: flex; gap: 1rem; width: max-content;
+    animation: gal-scroll 42s linear infinite;
+  }
+  .gal-marquee:hover .gal-track { animation-play-state: paused; }
+  .gal-slide {
+    position: relative; flex: 0 0 auto;
+    width: clamp(240px, 42vw, 420px); height: clamp(200px, 32vw, 300px);
+    border-radius: 1rem; overflow: hidden;
+  }
+  .gal-slide img { width: 100%; height: 100%; object-fit: cover; display: block; }
+  .gal-slide .gal-cap {
+    position: absolute; left: 0; right: 0; bottom: 0; padding: 1.25rem 1.25rem 1rem;
+    background: linear-gradient(180deg, transparent, rgba(12,12,10,.72));
+  }
+  @keyframes gal-scroll { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+  @media (prefers-reduced-motion: reduce) {
+    .gal-track { animation: none; }
+  }
 </style>
 </head>
 <body class="font-sans text-pine antialiased">
@@ -519,43 +547,34 @@
 <!-- PORTFOLIO -->
 <section id="portfolio" class="py-24 sm:py-32 bg-white">
   <div class="mx-auto max-w-7xl px-5 sm:px-8">
-    <div class="flex flex-wrap items-end justify-between gap-6 mb-12">
-      <div class="max-w-2xl">
-        <p class="reveal flex items-center gap-3 text-grass font-700 text-sm tracking-[.24em] uppercase mb-4"><span class="h-px w-10 bg-grass"></span> Our Work</p>
-        <h2 class="reveal font-display text-4xl sm:text-5xl font-700 text-forest">Recent transformations</h2>
-      </div>
-      <a href="#quote" class="reveal link-underline text-forest font-700 inline-flex items-center gap-2">See what we can do for you
-        <svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path stroke-linecap="round" stroke-linejoin="round" d="M5 12h14M13 6l6 6-6 6"/></svg>
-      </a>
+    <div class="text-center max-w-2xl mx-auto mb-12">
+      <p class="reveal inline-flex items-center gap-3 text-grass font-700 text-sm tracking-[.24em] uppercase mb-4"><span class="h-px w-10 bg-grass"></span> View Our Work <span class="h-px w-10 bg-grass"></span></p>
+      <h2 class="reveal font-display text-4xl sm:text-5xl font-700 text-forest">Our Project Gallery</h2>
     </div>
+  </div>
 
-    <div class="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-      <a href="#quote" class="gal-item reveal group relative block overflow-hidden rounded-2xl sm:row-span-2 sm:col-span-2 h-72 sm:h-auto" data-d="1">
-        <img src="https://images.unsplash.com/photo-1576013551627-0cc20b96c2a7?w=1200&q=80&auto=format&fit=crop" alt="Mediterranean garden with pool" class="h-full w-full object-cover" />
-        <div class="absolute inset-0" style="background:linear-gradient(180deg,transparent 45%,rgba(12,12,10,.7))"></div>
-        <div class="absolute bottom-5 left-5"><p class="text-cream font-display text-xl font-700">Mediterranean Retreat</p><p class="text-cream/75 text-sm">Full design &amp; build</p></div>
-      </a>
-      <a href="#quote" class="gal-item reveal group relative block overflow-hidden rounded-2xl h-60" data-d="2">
-        <img src="https://images.unsplash.com/photo-1585320806297-9794b3e4eeae?w=800&q=80&auto=format&fit=crop" alt="Garden walkway" class="h-full w-full object-cover" />
-        <div class="absolute inset-0" style="background:linear-gradient(180deg,transparent 45%,rgba(12,12,10,.7))"></div>
-        <div class="absolute bottom-4 left-4"><p class="text-cream font-display text-lg font-700">Stone Walkway</p></div>
-      </a>
-      <a href="#quote" class="gal-item reveal group relative block overflow-hidden rounded-2xl h-60" data-d="3">
-        <img src="https://images.unsplash.com/photo-1558904541-efa843a96f01?w=800&q=80&auto=format&fit=crop" alt="Manicured lawn" class="h-full w-full object-cover" />
-        <div class="absolute inset-0" style="background:linear-gradient(180deg,transparent 45%,rgba(12,12,10,.7))"></div>
-        <div class="absolute bottom-4 left-4"><p class="text-cream font-display text-lg font-700">Estate Lawn</p></div>
-      </a>
-      <a href="#quote" class="gal-item reveal group relative block overflow-hidden rounded-2xl h-60" data-d="1">
-        <img src="https://images.unsplash.com/photo-1591857177580-dc82b9ac4e1e?w=800&q=80&auto=format&fit=crop" alt="Formal garden" class="h-full w-full object-cover" />
-        <div class="absolute inset-0" style="background:linear-gradient(180deg,transparent 45%,rgba(12,12,10,.7))"></div>
-        <div class="absolute bottom-4 left-4"><p class="text-cream font-display text-lg font-700">Formal Garden</p></div>
-      </a>
-      <a href="#quote" class="gal-item reveal group relative block overflow-hidden rounded-2xl h-60" data-d="2">
-        <img src="https://images.unsplash.com/photo-1542273917363-3b1817f69a2d?w=800&q=80&auto=format&fit=crop" alt="Tree-lined landscape" class="h-full w-full object-cover" />
-        <div class="absolute inset-0" style="background:linear-gradient(180deg,transparent 45%,rgba(12,12,10,.7))"></div>
-        <div class="absolute bottom-4 left-4"><p class="text-cream font-display text-lg font-700">Woodland Border</p></div>
-      </a>
+  <!-- sliding gallery (breaks out of the container to run edge-to-edge) -->
+  <div class="gal-marquee reveal">
+    <div class="gal-track">
+      <!-- set A -->
+      <a href="#quote" class="gal-slide group"><img src="https://images.unsplash.com/photo-1576013551627-0cc20b96c2a7?w=1000&q=80&auto=format&fit=crop" alt="Mediterranean garden with pool" /><div class="gal-cap"><p class="text-cream font-display text-lg font-700">Mediterranean Retreat</p></div></a>
+      <a href="#quote" class="gal-slide group"><img src="https://images.unsplash.com/photo-1585320806297-9794b3e4eeae?w=1000&q=80&auto=format&fit=crop" alt="Garden walkway" /><div class="gal-cap"><p class="text-cream font-display text-lg font-700">Stone Walkway</p></div></a>
+      <a href="#quote" class="gal-slide group"><img src="https://images.unsplash.com/photo-1558904541-efa843a96f01?w=1000&q=80&auto=format&fit=crop" alt="Manicured lawn" /><div class="gal-cap"><p class="text-cream font-display text-lg font-700">Estate Lawn</p></div></a>
+      <a href="#quote" class="gal-slide group"><img src="https://images.unsplash.com/photo-1591857177580-dc82b9ac4e1e?w=1000&q=80&auto=format&fit=crop" alt="Formal garden" /><div class="gal-cap"><p class="text-cream font-display text-lg font-700">Formal Garden</p></div></a>
+      <a href="#quote" class="gal-slide group"><img src="https://images.unsplash.com/photo-1542273917363-3b1817f69a2d?w=1000&q=80&auto=format&fit=crop" alt="Tree-lined landscape" /><div class="gal-cap"><p class="text-cream font-display text-lg font-700">Woodland Border</p></div></a>
+      <!-- set B (duplicate for seamless loop) -->
+      <a href="#quote" class="gal-slide group" aria-hidden="true" tabindex="-1"><img src="https://images.unsplash.com/photo-1576013551627-0cc20b96c2a7?w=1000&q=80&auto=format&fit=crop" alt="" /><div class="gal-cap"><p class="text-cream font-display text-lg font-700">Mediterranean Retreat</p></div></a>
+      <a href="#quote" class="gal-slide group" aria-hidden="true" tabindex="-1"><img src="https://images.unsplash.com/photo-1585320806297-9794b3e4eeae?w=1000&q=80&auto=format&fit=crop" alt="" /><div class="gal-cap"><p class="text-cream font-display text-lg font-700">Stone Walkway</p></div></a>
+      <a href="#quote" class="gal-slide group" aria-hidden="true" tabindex="-1"><img src="https://images.unsplash.com/photo-1558904541-efa843a96f01?w=1000&q=80&auto=format&fit=crop" alt="" /><div class="gal-cap"><p class="text-cream font-display text-lg font-700">Estate Lawn</p></div></a>
+      <a href="#quote" class="gal-slide group" aria-hidden="true" tabindex="-1"><img src="https://images.unsplash.com/photo-1591857177580-dc82b9ac4e1e?w=1000&q=80&auto=format&fit=crop" alt="" /><div class="gal-cap"><p class="text-cream font-display text-lg font-700">Formal Garden</p></div></a>
+      <a href="#quote" class="gal-slide group" aria-hidden="true" tabindex="-1"><img src="https://images.unsplash.com/photo-1542273917363-3b1817f69a2d?w=1000&q=80&auto=format&fit=crop" alt="" /><div class="gal-cap"><p class="text-cream font-display text-lg font-700">Woodland Border</p></div></a>
     </div>
+  </div>
+
+  <div class="mx-auto max-w-7xl px-5 sm:px-8 mt-12 text-center">
+    <a href="#quote" class="reveal btn-primary inline-flex items-center gap-2 rounded-full bg-forest px-8 py-4 text-base font-700 text-cream hover:bg-pine transition-colors">See what we can do for you
+      <svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path stroke-linecap="round" stroke-linejoin="round" d="M5 12h14M13 6l6 6-6 6"/></svg>
+    </a>
   </div>
 </section>
 
