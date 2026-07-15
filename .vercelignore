@@ -8,10 +8,8 @@ temporary screenshots
 # Dev tooling — not needed in production
 package.json
 package-lock.json
-serve.mjs
-screenshot.mjs
+dev
 
 # Source / reference material (kept in the repo, not shipped to the live site)
-Web.md
 README.md
-brand_assets
+docs

@@ -20,15 +20,17 @@ og-image.png          ← link-preview image shown when the site is shared
 PV Logo Light.png     ← logo used in the nav/footer (light, for dark backgrounds)
 PV Logo T.png         ← favicon (browser-tab icon)
 vercel.json           ← Vercel static config
-README.md             ← this file
-Web.md                ← design/frontend rules used when building the site
-
-serve.mjs             ← dev tool: runs the site locally
-screenshot.mjs        ← dev tool: takes screenshots for previewing
 package.json          ← lists the one dev dependency (puppeteer)
+README.md             ← this file
 
-brand_assets/
-  Brand Guidelines.png   ← brand reference (colors, fonts, logo usage)
+dev/                  ← local dev tooling (not shipped to the live site)
+  serve.mjs             ← runs the site locally
+  screenshot.mjs        ← takes screenshots for previewing
+
+docs/                 ← reference material (not shipped to the live site)
+  Web.md                ← design/frontend rules used when building the site
+  brand_assets/
+    Brand Guidelines.png ← brand reference (colors, fonts, logo usage)
 
 node_modules/         ← installed packages (hidden, rebuild with `npm install`)
 ```
@@ -42,8 +44,8 @@ node_modules/         ← installed packages (hidden, rebuild with `npm install`
 ## Run it locally
 
 ```bash
-npm install      # first time only (installs puppeteer for screenshots)
-node serve.mjs   # serves at http://localhost:4137
+npm install         # first time only (installs puppeteer for screenshots)
+node dev/serve.mjs  # serves at http://localhost:4137 (run from the repo root)
 ```
 
 ## Quote form
