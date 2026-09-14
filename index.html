@@ -27,32 +27,14 @@
 
 <link rel="canonical" href="https://www.primaverdelandscaping.com/" />
 <link rel="icon" type="image/png" href="./PV Logo T.png" />
-<script src="https://cdn.tailwindcss.com"></script>
+<link rel="preload" as="image" imagesrcset="images/hero-garden-640.webp 640w, images/hero-garden-1024.webp 1024w, images/hero-garden-1600.webp 1600w" imagesizes="100vw" fetchpriority="high">
+<link rel="stylesheet" href="assets/tailwind.css">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700;800&family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
-<script>
-  tailwind.config = {
-    theme: {
-      extend: {
-        colors: {
-          leaf: '#8FBF3F', grass: '#5E8C2A', field: '#4A7A24',
-          forest: '#2E5016', pine: '#1A3010', charcoal: '#0C0C0A',
-          cream: '#F4F4F0', itgreen: '#1A7A3D', itred: '#CD212A',
-        },
-        fontFamily: {
-          display: ['Cinzel', 'serif'],
-          sans: ['Montserrat', 'system-ui', 'sans-serif'],
-        },
-        boxShadow: {
-          card: '0 1px 2px rgba(26,48,16,.06), 0 12px 32px -12px rgba(26,48,16,.28)',
-          lift: '0 2px 4px rgba(26,48,16,.08), 0 28px 56px -20px rgba(26,48,16,.45)',
-          btn: '0 8px 24px -8px rgba(94,140,42,.6)',
-        },
-      },
-    },
-  };
-</script>
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700;800&family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700;800&family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&display=swap" media="print" onload="this.media='all'">
+<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700;800&family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&display=swap"></noscript>
+
 <style>
   :root { --ease: cubic-bezier(.22,1,.36,1); }
   html { scroll-behavior: smooth; }
@@ -378,7 +360,7 @@
 <!-- HERO -->
 <section id="home" class="relative min-h-[100svh] flex items-center overflow-hidden grain">
   <div class="absolute inset-0">
-    <img src="https://images.unsplash.com/photo-1576013551627-0cc20b96c2a7?w=2000&q=80&auto=format&fit=crop" alt="Manicured Mediterranean garden with cypress trees and pool" class="h-full w-full object-cover" />
+    <img src="images/hero-garden-1024.webp" srcset="images/hero-garden-640.webp 640w, images/hero-garden-1024.webp 1024w, images/hero-garden-1600.webp 1600w" sizes="100vw" width="1600" height="1067" fetchpriority="high" decoding="async" alt="Manicured Mediterranean garden with cypress trees and pool" class="h-full w-full object-cover" />
     <div class="absolute inset-0" style="background:linear-gradient(180deg,rgba(12,12,10,.62) 0%,rgba(26,48,16,.55) 45%,rgba(26,48,16,.88) 100%)"></div>
     <div class="absolute inset-0" style="background:radial-gradient(120% 80% at 15% 30%,rgba(143,191,63,.18),transparent 55%),radial-gradient(90% 70% at 90% 80%,rgba(46,80,22,.5),transparent 60%)"></div>
   </div>
@@ -451,7 +433,7 @@
     <div class="mt-14 grid gap-7 sm:grid-cols-2 lg:grid-cols-3">
       <!-- glow card -->
       <article class="glow-card reveal flex flex-col p-7 min-h-[320px]" style="isolation:isolate" data-d="1">
-        <img class="glow-photo" src="https://images.unsplash.com/photo-1591857177580-dc82b9ac4e1e?w=900&q=75&auto=format&fit=crop" alt="Garden design" />
+        <img loading="lazy" decoding="async" class="glow-photo" src="https://images.unsplash.com/photo-1591857177580-dc82b9ac4e1e?w=900&q=75&auto=format&fit=crop" alt="Garden design" />
         <div class="glow-overlay"></div>
         <div class="glow-treat"></div>
         <div class="glow-spot"></div>
@@ -466,7 +448,7 @@
       </article>
 
       <article class="glow-card reveal flex flex-col p-7 min-h-[320px]" style="isolation:isolate" data-d="2">
-        <img class="glow-photo" src="https://images.unsplash.com/photo-1558904541-efa843a96f01?w=900&q=75&auto=format&fit=crop" alt="Lawn care" />
+        <img loading="lazy" decoding="async" class="glow-photo" src="https://images.unsplash.com/photo-1558904541-efa843a96f01?w=900&q=75&auto=format&fit=crop" alt="Lawn care" />
         <div class="glow-overlay"></div>
         <div class="glow-treat"></div>
         <div class="glow-spot"></div>
@@ -481,7 +463,7 @@
       </article>
 
       <article class="glow-card reveal flex flex-col p-7 min-h-[320px]" style="isolation:isolate" data-d="3">
-        <img class="glow-photo" src="https://images.unsplash.com/photo-1585320806297-9794b3e4eeae?w=900&q=75&auto=format&fit=crop" alt="Hardscaping" />
+        <img loading="lazy" decoding="async" class="glow-photo" src="https://images.unsplash.com/photo-1585320806297-9794b3e4eeae?w=900&q=75&auto=format&fit=crop" alt="Hardscaping" />
         <div class="glow-overlay"></div>
         <div class="glow-treat"></div>
         <div class="glow-spot"></div>
@@ -496,7 +478,7 @@
       </article>
 
       <article class="glow-card reveal flex flex-col p-7 min-h-[320px]" style="isolation:isolate" data-d="1">
-        <img class="glow-photo" src="https://images.unsplash.com/photo-1542273917363-3b1817f69a2d?w=900&q=75&auto=format&fit=crop" alt="Tree and hedge care" />
+        <img loading="lazy" decoding="async" class="glow-photo" src="https://images.unsplash.com/photo-1542273917363-3b1817f69a2d?w=900&q=75&auto=format&fit=crop" alt="Tree and hedge care" />
         <div class="glow-overlay"></div>
         <div class="glow-treat"></div>
         <div class="glow-spot"></div>
@@ -511,7 +493,7 @@
       </article>
 
       <article class="glow-card reveal flex flex-col p-7 min-h-[320px]" style="isolation:isolate" data-d="2">
-        <img class="glow-photo" src="https://images.unsplash.com/photo-1416879595882-3373a0480b5b?w=900&q=75&auto=format&fit=crop" alt="Irrigation" />
+        <img loading="lazy" decoding="async" class="glow-photo" src="https://images.unsplash.com/photo-1416879595882-3373a0480b5b?w=900&q=75&auto=format&fit=crop" alt="Irrigation" />
         <div class="glow-overlay"></div>
         <div class="glow-treat"></div>
         <div class="glow-spot"></div>
@@ -526,7 +508,7 @@
       </article>
 
       <article class="glow-card reveal flex flex-col p-7 min-h-[320px]" style="isolation:isolate" data-d="3">
-        <img class="glow-photo" src="https://images.unsplash.com/photo-1492496913980-501348b61469?w=900&q=75&auto=format&fit=crop" alt="Seasonal cleanup" />
+        <img loading="lazy" decoding="async" class="glow-photo" src="https://images.unsplash.com/photo-1492496913980-501348b61469?w=900&q=75&auto=format&fit=crop" alt="Seasonal cleanup" />
         <div class="glow-overlay"></div>
         <div class="glow-treat"></div>
         <div class="glow-spot"></div>
@@ -549,7 +531,7 @@
   <div class="relative z-10 mx-auto max-w-7xl px-5 sm:px-8 grid lg:grid-cols-2 gap-14 items-center">
     <div class="reveal relative">
       <div class="absolute -inset-3 rounded-[2rem] it-stripe opacity-80"></div>
-      <img src="https://images.unsplash.com/photo-1591857177580-dc82b9ac4e1e?w=1100&q=80&auto=format&fit=crop" alt="Beautifully manicured Italian-style garden" class="relative rounded-[1.7rem] w-full h-[460px] object-cover shadow-lift" />
+      <img loading="lazy" decoding="async" src="https://images.unsplash.com/photo-1591857177580-dc82b9ac4e1e?w=1100&q=80&auto=format&fit=crop" alt="Beautifully manicured Italian-style garden" class="relative rounded-[1.7rem] w-full h-[460px] object-cover shadow-lift" />
       <div class="absolute -bottom-6 -right-2 sm:right-6 bg-cream rounded-2xl shadow-lift p-5 max-w-[220px]">
         <p class="font-display text-3xl font-700 text-forest">Since 2009</p>
         <p class="text-pine/70 text-sm mt-1">Three generations of growers and craftsmen.</p>
@@ -625,27 +607,27 @@
   <div class="gal-marquee reveal">
     <!-- row 1 (scrolls left) — real Primaverde projects -->
     <div class="gal-track">
-      <a href="#quote" class="gal-slide group"><img loading="lazy" src="./projects/flagstone-walkway.jpg" alt="Flagstone walkway with fresh sod lawn" /><div class="gal-cap"><p class="text-cream font-display text-lg font-700">Flagstone Walkway &amp; Sod</p></div></a>
-      <a href="#quote" class="gal-slide group"><img loading="lazy" src="./projects/backyard-living.jpg" alt="Backyard patio and lawn with planted beds" /><div class="gal-cap"><p class="text-cream font-display text-lg font-700">Backyard Living Space</p></div></a>
-      <a href="#quote" class="gal-slide group"><img loading="lazy" src="./projects/front-garden.jpg" alt="Front garden with flowering beds and paver border" /><div class="gal-cap"><p class="text-cream font-display text-lg font-700">Front Garden &amp; Planting</p></div></a>
-      <a href="#quote" class="gal-slide group"><img loading="lazy" src="./projects/front-yard-refresh.jpg" alt="Front yard with fresh mulch beds and cedars" /><div class="gal-cap"><p class="text-cream font-display text-lg font-700">Front Yard Refresh</p></div></a>
+      <a href="#quote" class="gal-slide group"><img loading="lazy" src="./projects/flagstone-walkway.webp" alt="Flagstone walkway with fresh sod lawn" /><div class="gal-cap"><p class="text-cream font-display text-lg font-700">Flagstone Walkway &amp; Sod</p></div></a>
+      <a href="#quote" class="gal-slide group"><img loading="lazy" src="./projects/backyard-living.webp" alt="Backyard patio and lawn with planted beds" /><div class="gal-cap"><p class="text-cream font-display text-lg font-700">Backyard Living Space</p></div></a>
+      <a href="#quote" class="gal-slide group"><img loading="lazy" src="./projects/front-garden.webp" alt="Front garden with flowering beds and paver border" /><div class="gal-cap"><p class="text-cream font-display text-lg font-700">Front Garden &amp; Planting</p></div></a>
+      <a href="#quote" class="gal-slide group"><img loading="lazy" src="./projects/front-yard-refresh.webp" alt="Front yard with fresh mulch beds and cedars" /><div class="gal-cap"><p class="text-cream font-display text-lg font-700">Front Yard Refresh</p></div></a>
       <!-- duplicate for seamless loop -->
-      <a href="#quote" class="gal-slide group" aria-hidden="true" tabindex="-1"><img loading="lazy" src="./projects/flagstone-walkway.jpg" alt="" /><div class="gal-cap"><p class="text-cream font-display text-lg font-700">Flagstone Walkway &amp; Sod</p></div></a>
-      <a href="#quote" class="gal-slide group" aria-hidden="true" tabindex="-1"><img loading="lazy" src="./projects/backyard-living.jpg" alt="" /><div class="gal-cap"><p class="text-cream font-display text-lg font-700">Backyard Living Space</p></div></a>
-      <a href="#quote" class="gal-slide group" aria-hidden="true" tabindex="-1"><img loading="lazy" src="./projects/front-garden.jpg" alt="" /><div class="gal-cap"><p class="text-cream font-display text-lg font-700">Front Garden &amp; Planting</p></div></a>
-      <a href="#quote" class="gal-slide group" aria-hidden="true" tabindex="-1"><img loading="lazy" src="./projects/front-yard-refresh.jpg" alt="" /><div class="gal-cap"><p class="text-cream font-display text-lg font-700">Front Yard Refresh</p></div></a>
+      <a href="#quote" class="gal-slide group" aria-hidden="true" tabindex="-1"><img loading="lazy" src="./projects/flagstone-walkway.webp" alt="" /><div class="gal-cap"><p class="text-cream font-display text-lg font-700">Flagstone Walkway &amp; Sod</p></div></a>
+      <a href="#quote" class="gal-slide group" aria-hidden="true" tabindex="-1"><img loading="lazy" src="./projects/backyard-living.webp" alt="" /><div class="gal-cap"><p class="text-cream font-display text-lg font-700">Backyard Living Space</p></div></a>
+      <a href="#quote" class="gal-slide group" aria-hidden="true" tabindex="-1"><img loading="lazy" src="./projects/front-garden.webp" alt="" /><div class="gal-cap"><p class="text-cream font-display text-lg font-700">Front Garden &amp; Planting</p></div></a>
+      <a href="#quote" class="gal-slide group" aria-hidden="true" tabindex="-1"><img loading="lazy" src="./projects/front-yard-refresh.webp" alt="" /><div class="gal-cap"><p class="text-cream font-display text-lg font-700">Front Yard Refresh</p></div></a>
     </div>
     <!-- row 2 (scrolls right) — real Primaverde projects -->
     <div class="gal-track gal-reverse">
-      <a href="#quote" class="gal-slide group"><img loading="lazy" src="./projects/backyard-sod.jpg" alt="Backyard with fresh sod and stone border" /><div class="gal-cap"><p class="text-cream font-display text-lg font-700">Backyard Sod &amp; Stone</p></div></a>
-      <a href="#quote" class="gal-slide group"><img loading="lazy" src="./projects/armour-stone.jpg" alt="Armour stone accent bed with mulch and shrubs" /><div class="gal-cap"><p class="text-cream font-display text-lg font-700">Armour Stone Accent</p></div></a>
-      <a href="#quote" class="gal-slide group"><img loading="lazy" src="./projects/garden-bed-mulch.jpg" alt="Garden bed with mulch, river rock and plantings" /><div class="gal-cap"><p class="text-cream font-display text-lg font-700">Garden Bed &amp; Mulch</p></div></a>
-      <a href="#quote" class="gal-slide group"><img loading="lazy" src="./projects/new-sod-lawn.jpg" alt="New sod lawn along a concrete walkway" /><div class="gal-cap"><p class="text-cream font-display text-lg font-700">New Sod Lawn</p></div></a>
+      <a href="#quote" class="gal-slide group"><img loading="lazy" src="./projects/backyard-sod.webp" alt="Backyard with fresh sod and stone border" /><div class="gal-cap"><p class="text-cream font-display text-lg font-700">Backyard Sod &amp; Stone</p></div></a>
+      <a href="#quote" class="gal-slide group"><img loading="lazy" src="./projects/armour-stone.webp" alt="Armour stone accent bed with mulch and shrubs" /><div class="gal-cap"><p class="text-cream font-display text-lg font-700">Armour Stone Accent</p></div></a>
+      <a href="#quote" class="gal-slide group"><img loading="lazy" src="./projects/garden-bed-mulch.webp" alt="Garden bed with mulch, river rock and plantings" /><div class="gal-cap"><p class="text-cream font-display text-lg font-700">Garden Bed &amp; Mulch</p></div></a>
+      <a href="#quote" class="gal-slide group"><img loading="lazy" src="./projects/new-sod-lawn.webp" alt="New sod lawn along a concrete walkway" /><div class="gal-cap"><p class="text-cream font-display text-lg font-700">New Sod Lawn</p></div></a>
       <!-- duplicate for seamless loop -->
-      <a href="#quote" class="gal-slide group" aria-hidden="true" tabindex="-1"><img loading="lazy" src="./projects/backyard-sod.jpg" alt="" /><div class="gal-cap"><p class="text-cream font-display text-lg font-700">Backyard Sod &amp; Stone</p></div></a>
-      <a href="#quote" class="gal-slide group" aria-hidden="true" tabindex="-1"><img loading="lazy" src="./projects/armour-stone.jpg" alt="" /><div class="gal-cap"><p class="text-cream font-display text-lg font-700">Armour Stone Accent</p></div></a>
-      <a href="#quote" class="gal-slide group" aria-hidden="true" tabindex="-1"><img loading="lazy" src="./projects/garden-bed-mulch.jpg" alt="" /><div class="gal-cap"><p class="text-cream font-display text-lg font-700">Garden Bed &amp; Mulch</p></div></a>
-      <a href="#quote" class="gal-slide group" aria-hidden="true" tabindex="-1"><img loading="lazy" src="./projects/new-sod-lawn.jpg" alt="" /><div class="gal-cap"><p class="text-cream font-display text-lg font-700">New Sod Lawn</p></div></a>
+      <a href="#quote" class="gal-slide group" aria-hidden="true" tabindex="-1"><img loading="lazy" src="./projects/backyard-sod.webp" alt="" /><div class="gal-cap"><p class="text-cream font-display text-lg font-700">Backyard Sod &amp; Stone</p></div></a>
+      <a href="#quote" class="gal-slide group" aria-hidden="true" tabindex="-1"><img loading="lazy" src="./projects/armour-stone.webp" alt="" /><div class="gal-cap"><p class="text-cream font-display text-lg font-700">Armour Stone Accent</p></div></a>
+      <a href="#quote" class="gal-slide group" aria-hidden="true" tabindex="-1"><img loading="lazy" src="./projects/garden-bed-mulch.webp" alt="" /><div class="gal-cap"><p class="text-cream font-display text-lg font-700">Garden Bed &amp; Mulch</p></div></a>
+      <a href="#quote" class="gal-slide group" aria-hidden="true" tabindex="-1"><img loading="lazy" src="./projects/new-sod-lawn.webp" alt="" /><div class="gal-cap"><p class="text-cream font-display text-lg font-700">New Sod Lawn</p></div></a>
     </div>
   </div>
 
@@ -668,8 +650,8 @@
     <div class="grid gap-8 md:grid-cols-3">
       <figure class="reveal" data-d="1">
         <div class="ba shadow-card">
-          <img class="ba-before" src="./projects/backyard-sod-before.jpg" alt="Backyard before — patchy dirt lawn" />
-          <img class="ba-after"  src="./projects/backyard-sod.jpg" alt="Backyard after — fresh sod and stone border" />
+          <img loading="lazy" decoding="async" class="ba-before" src="./projects/backyard-sod-before.webp" alt="Backyard before — patchy dirt lawn" />
+          <img loading="lazy" decoding="async" class="ba-after"  src="./projects/backyard-sod.webp" alt="Backyard after — fresh sod and stone border" />
           <span class="ba-tag before">Before</span>
           <span class="ba-tag after">After</span>
           <span class="ba-line"></span>
@@ -681,8 +663,8 @@
 
       <figure class="reveal" data-d="2">
         <div class="ba shadow-card">
-          <img class="ba-before" src="./projects/garden-bed-before.jpg" alt="Garden before — overgrown leaf-covered bed" />
-          <img class="ba-after"  src="./projects/garden-bed-mulch.jpg" alt="Garden after — fresh mulch beds and plantings" />
+          <img loading="lazy" decoding="async" class="ba-before" src="./projects/garden-bed-before.webp" alt="Garden before — overgrown leaf-covered bed" />
+          <img loading="lazy" decoding="async" class="ba-after"  src="./projects/garden-bed-mulch.webp" alt="Garden after — fresh mulch beds and plantings" />
           <span class="ba-tag before">Before</span>
           <span class="ba-tag after">After</span>
           <span class="ba-line"></span>
@@ -694,8 +676,8 @@
 
       <figure class="reveal" data-d="3">
         <div class="ba shadow-card">
-          <img class="ba-before" src="./projects/backyard-living-before.jpg" alt="Backyard before — bare, torn-up yard" />
-          <img class="ba-after"  src="./projects/backyard-living.jpg" alt="Backyard after — lush lawn, patio and planted beds" />
+          <img loading="lazy" decoding="async" class="ba-before" src="./projects/backyard-living-before.webp" alt="Backyard before — bare, torn-up yard" />
+          <img loading="lazy" decoding="async" class="ba-after"  src="./projects/backyard-living.webp" alt="Backyard after — lush lawn, patio and planted beds" />
           <span class="ba-tag before">Before</span>
           <span class="ba-tag after">After</span>
           <span class="ba-line"></span>
@@ -820,7 +802,7 @@
   <div class="mx-auto max-w-7xl px-5 sm:px-8 py-16">
     <div class="grid gap-10 md:grid-cols-4">
       <div class="md:col-span-1">
-        <img src="./PV Logo Light.png" alt="Primaverde Landscaping" class="h-20 w-20 object-contain" />
+        <img loading="lazy" decoding="async" src="./PV Logo Light.png" alt="Primaverde Landscaping" class="h-20 w-20 object-contain" />
         <p class="mt-4 text-sm leading-relaxed max-w-xs">Landscapes crafted with Italian soul. Designing, building, and caring for beautiful outdoor spaces since 2009.</p>
         <div class="it-stripe h-1 w-24 rounded-full mt-5"></div>
       </div>
